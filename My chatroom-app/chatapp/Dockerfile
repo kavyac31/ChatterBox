@@ -2,6 +2,6 @@ FROM maven:3.8.5-openjdk-17 AS build
 COPY . .
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /app/target/chatapp-0.0.1-SNAPSHOT.jar chat.jar
+COPY --from=build /My chatroom-app/chatapp/target/chatapp-0.0.1-SNAPSHOT.jar chat.jar
 EXPOSE 7070
 ENTRYPOINT ["java","-jar","chat.jar"]
