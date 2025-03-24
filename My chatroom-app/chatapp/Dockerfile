@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build/target/chatapp-0.0.1-SNAPSHOT.jar chatapp.jar
+COPY --from=build target/chatapp-0.0.1-SNAPSHOT.jar chatapp.jar
 EXPOSE 7070
 ENTRYPOINT ["java","-jar","chatapp.jar"]
